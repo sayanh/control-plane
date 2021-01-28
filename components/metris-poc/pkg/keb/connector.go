@@ -17,11 +17,7 @@ func GetRuntimes(endpoint string) (*Runtimes, error) {
 	var runtimes Runtimes
 
 	err = json.NewDecoder(resp.Body).Decode(&runtimes)
-	if &runtimes != nil {
-		fmt.Println(runtimes.Count)
-		fmt.Println(runtimes.TotalCount)
-		fmt.Println(runtimes.Data[0].Status.CreatedAt)
-	}
+
 	if err != nil {
 		fmt.Printf("invalid JSON: %v", err)
 		return nil, err
